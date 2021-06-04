@@ -53,11 +53,11 @@ body {
   .resultPage .pixel {
     display: block;
     position: absolute;
-    width: 90px;
-    height: 90px;
-    top: -90px;
+    width: 45px;
+    height: 45px;
+    top: -45px;
     z-index: -1;
-    transform: translateX(-90px);
+    transform: translateX(-45px);
     will-change: transform;
     $colors: (
       lighten(#5540b3, 10%),
@@ -70,9 +70,9 @@ body {
     animation-duration: $animationDuration;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    @for $i from 1 through 9 {
+    @for $i from 1 through 18 {
       &:nth-child(#{$i}) {
-        left: calc(#{$i} * 90px);
+        left: calc(#{$i} * 45px);
         background-color: nth($colors, random(length($colors)));
         animation-duration: (random($animationDuration * 10) / 10) * 1s + 4s;
         animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
@@ -586,6 +586,7 @@ body {
 
 @keyframes move {
   100% {
-    transform: translateX(-90px) translateY(800px);
+    transform: translateX(-45px) translateY(800px);
+    filter: blur(10px);
   }
 }
