@@ -140,7 +140,7 @@ window.addEventListener('load', () => {
       'data-currentQuestion',
       `${question + 1} / ${data.length}`
     )
-    gameImage.setAttribute('src', `/assets/q${question + 1}.png`)
+    gameImage.setAttribute('src', `./assets/q${question + 1}.png`)
     gamePageQuestion.innerText = data[question].question
     timeItem.innerText = time
     moneyItem.innerText = money
