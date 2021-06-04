@@ -2,9 +2,9 @@ import { data, labelsAfterGame } from './data.js'
 
 window.addEventListener('load', () => {
   let question = 0
-  let time = 30
-  let money = 30
-  let nerves = 30
+  let time = 25
+  let money = 25
+  let nerves = 25
 
   let lastResults = []
 
@@ -121,7 +121,7 @@ window.addEventListener('load', () => {
           break
       }
     })
-    if (question === data.length - 1) {
+    if (question === data.length - 1 || money <= 0 || time <= 0 || nerves <= 0) {
       onGameEnd()
     } else {
       showQuote(result)
@@ -162,9 +162,13 @@ window.addEventListener('load', () => {
   }
 
   const onGameEnd = () => {
+    resultButton.innerText = 'Грати ще'
     const resultText = document.querySelector('#gameId .resultPage h2')
 
-    if (money >= nerves && money >= time) {
+    if (money <= 0 || time <= 0 || nerves <= 0) {
+      resultText.innerText = 'Невдача! Ви не змогли пробалансувати між часом, грошима та нервами.'
+      resultButton.innerText = 'Почати заново'
+    } else if (money >= nerves && money >= time) {
       resultText.innerText = labelsAfterGame[0]
     } else if (nerves >= money && nerves >= time) {
       resultText.innerText = labelsAfterGame[1]
