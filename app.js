@@ -18,6 +18,7 @@ window.addEventListener('load', () => {
   const gamePageQuestion = document.querySelector('#gameId .gamePage .question')
   const resultButton = document.querySelector('#gameId .resultPage button')
   const resultWrapper = document.querySelector('#gameId .resultPage')
+  const resultImage = document.querySelector('#gameId .resultPage .heroBg')
   const prevQuestionButton = document.querySelector('#gameId .prevQuestion')
   const gamePageAnswersWrapper = document.querySelector(
     '#gameId .gamePage .answersWrapper'
@@ -168,12 +169,16 @@ window.addEventListener('load', () => {
     if (money <= 0 || time <= 0 || nerves <= 0) {
       resultText.innerText = 'Невдача! Ви не змогли пробалансувати між часом, грошима та нервами.'
       resultButton.innerText = 'Почати заново'
+      resultImage.setAttribute('src', '/assets/looserBg.png')
     } else if (money >= nerves && money >= time) {
       resultText.innerText = labelsAfterGame[0]
+      resultImage.setAttribute('src', '/assets/moneyBg.png')
     } else if (nerves >= money && nerves >= time) {
       resultText.innerText = labelsAfterGame[1]
+      resultImage.setAttribute('src', '/assets/nervesBg.png')
     } else {
       resultText.innerText = labelsAfterGame[2]
+      resultImage.setAttribute('src', '/assets/timeBg.png')
     }
 
     document.querySelector('#gameId .bgImage').style.display = 'block'
