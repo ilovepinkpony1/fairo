@@ -169,16 +169,16 @@ window.addEventListener('load', () => {
     if (money <= 0 || time <= 0 || nerves <= 0) {
       resultText.innerText = 'Невдача! Ви не змогли пробалансувати між часом, грошима та нервами.'
       resultButton.innerText = 'Почати заново'
-      resultImage.setAttribute('src', '/assets/looserBg.png')
+      resultImage.setAttribute('src', './assets/looserBg.png')
     } else if (money >= nerves && money >= time) {
       resultText.innerText = labelsAfterGame[0]
-      resultImage.setAttribute('src', '/assets/moneyBg.png')
+      resultImage.setAttribute('src', './assets/moneyBg.png')
     } else if (nerves >= money && nerves >= time) {
       resultText.innerText = labelsAfterGame[1]
-      resultImage.setAttribute('src', '/assets/nervesBg.png')
+      resultImage.setAttribute('src', './assets/nervesBg.png')
     } else {
       resultText.innerText = labelsAfterGame[2]
-      resultImage.setAttribute('src', '/assets/timeBg.png')
+      resultImage.setAttribute('src', './assets/timeBg.png')
     }
 
     document.querySelector('#gameId .bgImage').style.display = 'block'
