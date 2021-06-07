@@ -414,53 +414,72 @@ body {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      span {
+      div {
         box-sizing: border-box;
         width: calc(50% - 8px);
         margin-top: 16px;
         color: #fff;
-        padding: 16px;
-        background-color: $primaryColor;
         cursor: pointer;
         transition: 0.3s all ease;
         position: relative;
+        z-index: 1;
 
-        &::before,
-        &::after {
-          content: '';
+        p {
+          padding: 16px;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          background-color: $primaryColor;
+          position: relative;
+          z-index: 1;
+        }
+
+        span {
+          display: block;
           position: absolute;
-          height: 40px;
-          width: 40px;
-          background: $primaryColor;
-          opacity: 0.8;
-          transition: 0.3s all ease;
+          width: 16px;
+          height: 16px;
+          top: 12px;
           z-index: -1;
-        }
+          transform: translateX(-16px);
+          will-change: transform;
+          $duration: 1s;
+          $colors: (
+            lighten(#5540b3, 10%),
+            lighten(#5540b3, 20%),
+            lighten(#5540b3, 30%),
+            darken(#442cac, 10%),
+            darken(#442cac, 20%)
+          );
+          @for $i from 1 through 24 {
+            &:nth-child(#{$i}) {
+              left: calc(#{$i} * 16px);
+              background-color: nth($colors, random(length($colors)));
+              animation-duration: (random($duration * 5) / 10) * 1s + 1s;
+              animation-delay: random(($duration + 10s) * 10) / 10 * -1s;
+            }
+          }
 
-        &::before {
-          left: 0;
-          top: 0;
-        }
-        &::after {
-          right: 0;
-          bottom: 0;
+          @media(max-width: 990px) {
+            display: none;
+          }
         }
 
         &:hover {
-          &::before {
-            transform: translateY(-8px) translateX(-8px);
-          }
-          &::after {
-            transform: translateY(8px) translateX(8px);
-          }
           transform: scale(0.98);
           box-shadow: 0px 8px 16px 2px rgba(68, 50, 169, 0.3);
+          span {
+            animation-name: moveAnswer;
+            animation-duration: $animationDuration;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          }
         }
       }
 
       @media (max-width: 990px) {
         flex-direction: column;
-        span {
+        div {
           width: 100%;
         }
       }
@@ -597,3 +616,12 @@ body {
     filter: blur(10px);
   }
 }
+
+@keyframes moveAnswer {
+  100% {
+    transform: translateX(-16px) translateY(-100px);
+    filter: blur(10px);
+    opacity: 0;
+  }
+}
+

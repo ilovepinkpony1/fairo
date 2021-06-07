@@ -148,12 +148,21 @@ window.addEventListener('load', () => {
     nervesItem.innerText = nerves
     gamePageAnswersWrapper.innerHTML = ''
     data[question].answers.forEach((item) => {
-      const el = document.createElement('span')
+      const el = document.createElement('div')
+      const text = document.createElement('p')
+      text.innerText = item.text
+      el.appendChild(text)
+      const arr = new Array(24).fill(null)
+
+      arr.forEach(() => {
+        const innerEl = document.createElement('span')
+        el.appendChild(innerEl)
+      })
+
       el.addEventListener('click', () => {
         onAnswer(item.result)
       })
 
-      el.innerText = item.text
       gamePageAnswersWrapper.appendChild(el)
     })
   }
