@@ -107,7 +107,7 @@ window.addEventListener('load', () => {
     initQuestions()
   })
 
-  const onAnswer = (result) => {
+  const onAnswer = (result, quote) => {
     lastResults.push(result)
     result.forEach((res) => {
       switch (res) {
@@ -125,7 +125,7 @@ window.addEventListener('load', () => {
     if (question === data.length - 1 || money <= 0 || time <= 0 || nerves <= 0) {
       onGameEnd()
     } else {
-      showQuote(result)
+      showQuote(result, quote)
     }
     timeItem.innerText = time
     moneyItem.innerText = money
@@ -160,7 +160,7 @@ window.addEventListener('load', () => {
       })
 
       el.addEventListener('click', () => {
-        onAnswer(item.result)
+        onAnswer(item.result, item.quote)
       })
 
       gamePageAnswersWrapper.appendChild(el)
@@ -197,7 +197,7 @@ window.addEventListener('load', () => {
     gamePage.classList.remove('gamePageVisible')
   }
 
-  const showQuote = (answeredItems) => {
+  const showQuote = (answeredItems, quote) => {
     const text = document.querySelector('#gameId .quoteWrapper p')
     modalButton.innerText = 'далі'
 
@@ -224,7 +224,7 @@ window.addEventListener('load', () => {
     })
 
     toggleModalVisible()
-    text.innerText = data[question].quote
+    text.innerText = quote
     question += 1
   }
 
