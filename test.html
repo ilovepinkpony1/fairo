@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const data = [
+        {
+          question:
+            'О 16:30 бухгалтер вашого клієнта раптово повідомляє, що йде у відпустку з наступного дня, бо вдалося вхопити гарячу путівку. У вас є шанс виставити рахунок за свої послуги сьогодні або вже за 10 робочих днів. Що робитимете?',
+          answers: [
+            {
+              text: 'Не хочу сидіти без грошей ще 10 днів. Розгорну Excel-імперію прямо на колінах і встигну надіслати. Це ж доволі просто.',
+              result: ['time', 'nerves'],
+            },
+            {
+              text: 'Чого тут нервувати? У мене завжди є гроші про запас, а клієнт нікуди не втече, адже ми давно співпрацюємо. Краще побажаю бухгалтеру гарного відпочинку.',
+              result: ['money'],
+            },
+            {
+              text: 'Оке-е-ей, закрию Tik-Tok на декілька хвилин і створю рахунок в застосунку. ',
+              result: [],
+            },
+          ],
+          quote:
+            'До речі, Fairo запам’ятовує дані клієнта й автоматично заповнює їх під час створення наступних рахунків. ',
+        },
+        {
+          question:
+            'Ви працюєте над величезним проєктом для компанії з Великої Британії. Ваш клієнт не знає української та хоче рахунок із сумою у фунтах. Що робитимете?',
+          answers: [
+            {
+              text: 'Товариш тільки-но повернувся із заробітків із Лондона, він допоможе. Поки що подивлюся, що там із курсом.',
+              result: ['time', 'nerves'],
+            },
+            {
+              text: 'Оскільки проєкт великий — потрібен професійний підхід. Знайду першокласного перекладача з досвідом у юридичних питаннях, аби кожне слово відповідало правилам. Не хочу стати героєм вислову «скупий платить двічі».',
+              result: ['money'],
+            },
+            {
+              text: 'Сам(а) легко створюю рахунки у гривні. Думаю, з фунтами проблем не буде.',
+              result: ['time', 'nerves'],
+            },
+          ],
+          quote:
+            'Рахунки у Fairo можна створювати трьома мовами та в понад 40 валютах.',
+        },
+        {
+          question:
+            'Усі друзі-фрилансери заметушилися й обговорюють якісь дедлайни подання податкових звітів. Як точно з’ясувати, що та коли треба подавати?',
+          answers: [
+            {
+              text: 'Порадитися з тими самими друзями. Одна голова добре, а декілька — краще. Ще й лайфхаків можна наслухатися. У крайньому разі заплачу комусь за консультацію.',
+              result: ['time', 'money'],
+            },
+            {
+              text: 'Можна загуглити та звіритися на сайті Державної податкової служби України. Відчую себе бумером.',
+              result: ['time', 'nerves'],
+            },
+            {
+              text: 'Я майстер планування. У мене є додатки, які нагадують про курс вітамінів, початок ретроградного Меркурія та вихід нових сезонів улюблених серіалів. Про податки точно якийсь нагадає.',
+              result: ['time'],
+            },
+          ],
+          quote:
+            'Fairo нагадує про періоди подання податкових звітів. Перші два місяці користування застосунком безоплатні.',
+        },
+        {
+          question:
+            'Біткоїн нещодавно сильно впав, і вам здається, що ось-ось він удвічі здорожчає. Дуже хочеться вкластися, поки є можливість, але потрібно залишити гроші на сплату податків. Як будете рахувати, скільки грошей відкласти?',
+          answers: [
+            {
+              text: 'Сяду ввечері на кілька годин за ноутбук і розв’яжу це питання. Працювати з числами та документами завжди зручніше у спокої та з десктопу. Ще й улюблений серіал на фоні послухаю.',
+              result: ['time', 'nerves'],
+            },
+            {
+              text: 'Податки — справа відповідальна, тож попрошу допомоги у свого давнього товариша, він наче бухгалтер.',
+              result: ['money'],
+            },
+            {
+              text: 'Я вже знаю, скільки заплачу! У моєму особистому кабінеті все давно підраховано.',
+              result: [],
+            },
+          ],
+          quote:
+            'Із Fairo сума податку ніколи не стане сюрпризом наприкінці періоду, адже додаток підраховує та зображає її в реальному часі. Також користувач може «відкласти» кошти на своєму бізнес-рахунку.',
+        },
+        {
+          question:
+            'Літо йде повним ходом — у брата весілля, море тепле, а відпочинок на природі заворожує. Тим часом податки нікуди не зникли — їх однаково потрібно сплачувати. Як ви це зробите?',
+          answers: [
+            {
+              text: 'Які податки? У мене тут свято. Я дотримуюся правила «Живемо лише один раз». Краще потім сплачу штраф, ніж буду розбиратися з цим зараз.',
+              result: ['money'],
+            },
+            {
+              text: 'Хочеш зробити добре — зроби сам. Це не так довго, як здається. Краще цілувати жирну сковорідку на другий день весілля, ніж платити зайві гроші абикуди.',
+              result: ['time', 'nerves'],
+            },
+            {
+              text: 'Здогадувався, що так буде, тому заздалегідь автоматизував цей процес у смартфоні.',
+              result: [],
+            },
+          ],
+          quote:
+            'Нещодавно Fairo додав можливість сплачувати податки за один клік та оплачувати рахунки в застосунку. Банківські функції Fairo працюють за підтримки Raiffeisen Bank Aval (RBI).',
+        },
+        {
+          question:
+            'Так сталося, що ви були в шаленій відпустці та не встигли сплатити податки. Яка ж там заборгованість?',
+          answers: [
+            {
+              text: 'Дідько! Мабуть, там пеня та штрафні платежі. Потрібно сходити в податкову, щоб остаточно все вирішити.',
+              result: ['money', 'time', 'nerves'],
+            },
+            {
+              text: 'Спокійно розв’яжу проблему — почитаю в інтернеті, які бувають штрафи та пеня. А наступного дня і сплачу. Без паніки, панове, без паніки.',
+              result: ['time', 'money'],
+            },
+            {
+              text: 'Довірюся технологіям. Я вже отримував пуш-повідомлення про нараховану заборгованість, просто перевірю в додатку.',
+              result: ['money'],
+            },
+          ],
+          quote:
+            'Fairo автоматично розраховує податкову заборгованість ФОПів 3-ї групи за кожним бухгалтерським записом.',
+          rightAnswerIndex: 0,
+        },
+      ]
+
+      const labelsAfterGame = [
+        'Ого, тобі вдалося зберегти купу грошей. Роби так і далі й купиш мамі білий кабріолет вже до Нового року!',
+        'Твої нерви залишилися на місці. Клич друзів на «Дженгу» — нервів вистачить на декілька годин гри. ',
+        'Нам би так швидко розв’язувати проблеми, як це вдалося тобі. З такою кількістю зекономленого часу можна навіть виспатися чи постояти в заторах. ',
+      ]
+
+      window.addEventListener('load', () => {
+        let question = 0
+        let time = 25
+        let money = 25
+        let nerves = 25
+
+        let lastResults = []
+
+        const welcomePageButton = document.querySelector(
+          '#gameId .welcomePage button'
+        )
+        const welcomePage = document.querySelector('#gameId .welcomePage')
+        const rightsPage = document.querySelector('#gameId .rightsPage')
+        const rightsPageButton = document.querySelector('#gameId .rightsPage button')
+        const gamePage = document.querySelector('#gameId .gamePage')
+        const gamePageQuestion = document.querySelector('#gameId .gamePage .question')
+        const resultButton = document.querySelector('#gameId .resultPage button')
+        const resultWrapper = document.querySelector('#gameId .resultPage')
+        const resultImage = document.querySelector('#gameId .resultPage .heroBg')
+        const prevQuestionButton = document.querySelector('#gameId .prevQuestion')
+        const gamePageAnswersWrapper = document.querySelector(
+          '#gameId .gamePage .answersWrapper'
+        )
+        const timeItem = document.querySelector('#gameId .gamePage .time span')
+        const moneyItem = document.querySelector('#gameId .gamePage .money span')
+        const nervesItem = document.querySelector('#gameId .gamePage .nerves span')
+
+        const modalTimeItem = document.querySelector('#gameId .modalBg .time span')
+        const modalMoneyItem = document.querySelector('#gameId .modalBg .money span')
+        const modalNervesItem = document.querySelector(
+          '#gameId .modalBg .nerves span'
+        )
+        const gameImage = document.querySelector(
+          '#gameId .gamePage .imageWrapper img'
+        )
+        const modalWrapper = document.querySelector('#gameId .modalBg')
+        const modalButton = document.querySelector('#gameId .modalBg button')
+
+        welcomePageButton.addEventListener('click', () => {
+          rightsPage.classList.add('rightsPageVisible')
+          welcomePage.classList.add('welcomePageHidden')
+        })
+
+        prevQuestionButton.addEventListener('click', () => {
+          question -= 1
+          if (question === 0) {
+            prevQuestionButton.classList.remove('prevQuestionVisible')
+          }
+          lastResults[lastResults.length - 1].forEach((item) => {
+            switch (item) {
+              case 'money':
+                money += 5
+                break
+              case 'time':
+                time += 5
+                break
+              case 'nerves':
+                nerves += 5
+                break
+            }
+          })
+
+          lastResults.pop()
+
+          timeItem.innerText = time
+          moneyItem.innerText = money
+          nervesItem.innerText = nerves
+          initQuestions()
+        })
+
+        rightsPageButton.addEventListener('click', () => {
+          gamePage.classList.add('gamePageVisible')
+          rightsPage.classList.add('rightsPageHidden')
+          document.querySelector('#gameId .bgImage').style.display = 'none'
+          document.querySelector('#gameId').style.overflow = 'visible'
+        })
+
+        resultButton.addEventListener('click', () => {
+          question = 0
+          time = 30
+          money = 30
+          nerves = 30
+          resultWrapper.classList.remove('resultPageVisible')
+          prevQuestionButton.classList.remove('prevQuestionVisible')
+          gamePage.classList.add('gamePageVisible')
+          timeItem.innerText = 30
+          moneyItem.innerText = 30
+          nervesItem.innerText = 30
+          gamePageQuestion.setAttribute(
+            'data-currentQuestion',
+            `${question + 1} / ${data.length}`
+          )
+          initQuestions()
+        })
+
+        modalButton.addEventListener('click', () => {
+          modalMoneyItem.classList.remove('reducedScore')
+          modalMoneyItem.innerText = '0'
+          modalNervesItem.classList.remove('reducedScore')
+          modalNervesItem.innerText = '0'
+          modalTimeItem.classList.remove('reducedScore')
+          modalTimeItem.innerText = '0'
+
+          toggleModalVisible()
+          initQuestions()
+        })
+
+        const onAnswer = (result) => {
+          lastResults.push(result)
+          result.forEach((res) => {
+            switch (res) {
+              case 'money':
+                money -= 5
+                break
+              case 'time':
+                time -= 5
+                break
+              case 'nerves':
+                nerves -= 5
+                break
+            }
+          })
+          if (question === data.length - 1 || money <= 0 || time <= 0 || nerves <= 0) {
+            onGameEnd()
+          } else {
+            showQuote(result)
+          }
+          timeItem.innerText = time
+          moneyItem.innerText = money
+          nervesItem.innerText = nerves
+
+          if (!prevQuestionButton.classList.contains('prevQuestionVisible')) {
+            prevQuestionButton.classList.add('prevQuestionVisible')
+          }
+        }
+
+        const initQuestions = () => {
+          gamePageQuestion.setAttribute(
+            'data-currentQuestion',
+            `${question + 1} / ${data.length}`
+          )
+          gameImage.setAttribute('src', `./assets/q${question + 1}.png`)
+          gamePageQuestion.innerText = data[question].question
+          timeItem.innerText = time
+          moneyItem.innerText = money
+          nervesItem.innerText = nerves
+          gamePageAnswersWrapper.innerHTML = ''
+          data[question].answers.forEach((item) => {
+            const el = document.createElement('div')
+            const text = document.createElement('p')
+            text.innerText = item.text
+            el.appendChild(text)
+            const arr = new Array(24).fill(null)
+
+            arr.forEach(() => {
+              const innerEl = document.createElement('span')
+              el.appendChild(innerEl)
+            })
+
+            el.addEventListener('click', () => {
+              onAnswer(item.result)
+            })
+
+            gamePageAnswersWrapper.appendChild(el)
+          })
+        }
+
+        const toggleModalVisible = () => {
+          modalWrapper.classList.toggle('modalBgVisible')
+        }
+
+        const onGameEnd = () => {
+          resultButton.innerText = 'Грати ще'
+          const resultText = document.querySelector('#gameId .resultPage h2')
+
+          if (money <= 0 || time <= 0 || nerves <= 0) {
+            resultText.innerText = 'Невдача! Ви не змогли пробалансувати між часом, грошима та нервами.'
+            resultButton.innerText = 'Почати заново'
+            resultImage.setAttribute('src', './assets/looserBg.png')
+          } else if (money >= nerves && money >= time) {
+            resultText.innerText = labelsAfterGame[0]
+            resultImage.setAttribute('src', './assets/moneyBg.png')
+          } else if (nerves >= money && nerves >= time) {
+            resultText.innerText = labelsAfterGame[1]
+            resultImage.setAttribute('src', './assets/nervesBg.png')
+          } else {
+            resultText.innerText = labelsAfterGame[2]
+            resultImage.setAttribute('src', './assets/timeBg.png')
+          }
+
+          document.querySelector('#gameId .bgImage').style.display = 'block'
+          document.querySelector('#gameId').style.overflow = 'hidden'
+
+          resultWrapper.classList.add('resultPageVisible')
+          gamePage.classList.remove('gamePageVisible')
+        }
+
+        const showQuote = (answeredItems) => {
+          const text = document.querySelector('#gameId .quoteWrapper p')
+          modalButton.innerText = 'далі'
+
+          answeredItems.forEach((item) => {
+            switch (item) {
+              case 'time': {
+                modalTimeItem.classList.add('reducedScore')
+                modalTimeItem.innerText = '-5'
+                break
+              }
+
+              case 'money': {
+                modalMoneyItem.classList.add('reducedScore')
+                modalMoneyItem.innerText = '-5'
+                break
+              }
+
+              case 'nerves': {
+                modalNervesItem.classList.add('reducedScore')
+                modalNervesItem.innerText = '-5'
+                break
+              }
+            }
+          })
+
+          toggleModalVisible()
+          text.innerText = data[question].quote
+          question += 1
+        }
+
+        initQuestions()
+      })
+
+  </script>
+</body>
+</html>
