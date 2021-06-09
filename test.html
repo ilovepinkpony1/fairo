@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://vctr.media/specials/fairo-main/assets/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <title>Fairo</title>
 </head>
 
 <body>
-  <div id="gameId">
+  <div id="fairoVectorSPecProject">
     <img class="bgImage" src="./assets/bg.png" alt="">
     <div class="welcomePage">
       <span class="pixel"></span>
@@ -38,7 +38,7 @@
           ФОП без головного болю. «Хакніть» фінансову рутину
         </h2>
 
-        <img class="heroBg" src="./assets/heroBg.png" alt="">
+        <img class="heroBg" src="https://vctr.media/specials/fairo-main/assets/assets/heroBg.png" alt="">
 
         <button>
           розпочати
@@ -69,17 +69,17 @@
     <div class="gamePage">
       <div class="header">
         <div class="time">
-          <img src="./assets/time.png" alt="">
+          <img src="https://vctr.media/specials/fairo-main/assets/assets/time.png" alt="">
           <div>Час</div>
           <span>30</span>
         </div>
         <div class="money">
-          <img src="./assets/money.png" alt="">
+          <img src="https://vctr.media/specials/fairo-main/assets/assets/money.png" alt="">
           <div>Гроші</div>
           <span>30</span>
         </div>
         <div class="nerves">
-          <img src="./assets/nerves.png" alt="">
+          <img src="https://vctr.media/specials/fairo-main/assets/assets/nerves.png" alt="">
           <div>Нерви</div>
           <span>30</span>
         </div>
@@ -136,17 +136,17 @@
         <p></p>
         <div class="results">
           <div class="time">
-            <img src="./assets/time.png" alt="">
+            <img src="https://vctr.media/specials/fairo-main/assets/assets/time.png" alt="">
             <div>Час</div>
             <span>0</span>
           </div>
           <div class="money">
-            <img src="./assets/money.png" alt="">
+            <img src="https://vctr.media/specials/fairo-main/assets/assets/money.png" alt="">
             <div>Гроші</div>
             <span>0</span>
           </div>
           <div class="nerves">
-            <img src="./assets/nerves.png" alt="">
+            <img src="https://vctr.media/specials/fairo-main/assets/assets/nerves.png" alt="">
             <div>Нерви</div>
             <span>0</span>
           </div>
@@ -304,34 +304,34 @@
         let lastResults = []
 
         const welcomePageButton = document.querySelector(
-          '#gameId .welcomePage button'
+          '#fairoVectorSPecProject .welcomePage button'
         )
-        const welcomePage = document.querySelector('#gameId .welcomePage')
-        const rightsPage = document.querySelector('#gameId .rightsPage')
-        const rightsPageButton = document.querySelector('#gameId .rightsPage button')
-        const gamePage = document.querySelector('#gameId .gamePage')
-        const gamePageQuestion = document.querySelector('#gameId .gamePage .question')
-        const resultButton = document.querySelector('#gameId .resultPage button')
-        const resultWrapper = document.querySelector('#gameId .resultPage')
-        const resultImage = document.querySelector('#gameId .resultPage .heroBg')
-        const prevQuestionButton = document.querySelector('#gameId .prevQuestion')
+        const welcomePage = document.querySelector('#fairoVectorSPecProject .welcomePage')
+        const rightsPage = document.querySelector('#fairoVectorSPecProject .rightsPage')
+        const rightsPageButton = document.querySelector('#fairoVectorSPecProject .rightsPage button')
+        const gamePage = document.querySelector('#fairoVectorSPecProject .gamePage')
+        const gamePageQuestion = document.querySelector('#fairoVectorSPecProject .gamePage .question')
+        const resultButton = document.querySelector('#fairoVectorSPecProject .resultPage button')
+        const resultWrapper = document.querySelector('#fairoVectorSPecProject .resultPage')
+        const resultImage = document.querySelector('#fairoVectorSPecProject .resultPage .heroBg')
+        const prevQuestionButton = document.querySelector('#fairoVectorSPecProject .prevQuestion')
         const gamePageAnswersWrapper = document.querySelector(
-          '#gameId .gamePage .answersWrapper'
+          '#fairoVectorSPecProject .gamePage .answersWrapper'
         )
-        const timeItem = document.querySelector('#gameId .gamePage .time span')
-        const moneyItem = document.querySelector('#gameId .gamePage .money span')
-        const nervesItem = document.querySelector('#gameId .gamePage .nerves span')
+        const timeItem = document.querySelector('#fairoVectorSPecProject .gamePage .time span')
+        const moneyItem = document.querySelector('#fairoVectorSPecProject .gamePage .money span')
+        const nervesItem = document.querySelector('#fairoVectorSPecProject .gamePage .nerves span')
 
-        const modalTimeItem = document.querySelector('#gameId .modalBg .time span')
-        const modalMoneyItem = document.querySelector('#gameId .modalBg .money span')
+        const modalTimeItem = document.querySelector('#fairoVectorSPecProject .modalBg .time span')
+        const modalMoneyItem = document.querySelector('#fairoVectorSPecProject .modalBg .money span')
         const modalNervesItem = document.querySelector(
-          '#gameId .modalBg .nerves span'
+          '#fairoVectorSPecProject .modalBg .nerves span'
         )
         const gameImage = document.querySelector(
-          '#gameId .gamePage .imageWrapper img'
+          '#fairoVectorSPecProject .gamePage .imageWrapper img'
         )
-        const modalWrapper = document.querySelector('#gameId .modalBg')
-        const modalButton = document.querySelector('#gameId .modalBg button')
+        const modalWrapper = document.querySelector('#fairoVectorSPecProject .modalBg')
+        const modalButton = document.querySelector('#fairoVectorSPecProject .modalBg button')
 
         welcomePageButton.addEventListener('click', () => {
           rightsPage.classList.add('rightsPageVisible')
@@ -368,8 +368,8 @@
         rightsPageButton.addEventListener('click', () => {
           gamePage.classList.add('gamePageVisible')
           rightsPage.classList.add('rightsPageHidden')
-          document.querySelector('#gameId .bgImage').style.display = 'none'
-          document.querySelector('#gameId').style.overflow = 'visible'
+          document.querySelector('#fairoVectorSPecProject .bgImage').style.display = 'none'
+          document.querySelector('#fairoVectorSPecProject').style.overflow = 'visible'
         })
 
         resultButton.addEventListener('click', () => {
@@ -468,32 +468,32 @@
 
         const onGameEnd = () => {
           resultButton.innerText = 'Грати ще'
-          const resultText = document.querySelector('#gameId .resultPage h2')
+          const resultText = document.querySelector('#fairoVectorSPecProject .resultPage h2')
 
           if (money <= 0 || time <= 0 || nerves <= 0) {
             resultText.innerText = 'Невдача! Ви не змогли пробалансувати між часом, грошима та нервами.'
             resultButton.innerText = 'Почати заново'
-            resultImage.setAttribute('src', './assets/looserBg.png')
+            resultImage.setAttribute('src', 'https://vctr.media/specials/fairo-main/assets/assets/looserBg.png')
           } else if (money >= nerves && money >= time) {
             resultText.innerText = labelsAfterGame[0]
-            resultImage.setAttribute('src', './assets/moneyBg.png')
+            resultImage.setAttribute('src', 'https://vctr.media/specials/fairo-main/assets/assets/moneyBg.png')
           } else if (nerves >= money && nerves >= time) {
             resultText.innerText = labelsAfterGame[1]
-            resultImage.setAttribute('src', './assets/nervesBg.png')
+            resultImage.setAttribute('src', 'https://vctr.media/specials/fairo-main/assets/assets/nervesBg.png')
           } else {
             resultText.innerText = labelsAfterGame[2]
-            resultImage.setAttribute('src', './assets/timeBg.png')
+            resultImage.setAttribute('src', 'https://vctr.media/specials/fairo-main/assets/assets/timeBg.png')
           }
 
-          document.querySelector('#gameId .bgImage').style.display = 'block'
-          document.querySelector('#gameId').style.overflow = 'hidden'
+          document.querySelector('#fairoVectorSPecProject .bgImage').style.display = 'block'
+          document.querySelector('#fairoVectorSPecProject').style.overflow = 'hidden'
 
           resultWrapper.classList.add('resultPageVisible')
           gamePage.classList.remove('gamePageVisible')
         }
 
         const showQuote = (answeredItems, quote) => {
-          const text = document.querySelector('#gameId .quoteWrapper p')
+          const text = document.querySelector('#fairoVectorSPecProject .quoteWrapper p')
           modalButton.innerText = 'далі'
 
           answeredItems.forEach((item) => {

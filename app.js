@@ -9,34 +9,34 @@ window.addEventListener('load', () => {
   let lastResults = []
 
   const welcomePageButton = document.querySelector(
-    '#gameId .welcomePage button'
+    '#fairoVectorSPecProject .welcomePage button'
   )
-  const welcomePage = document.querySelector('#gameId .welcomePage')
-  const rightsPage = document.querySelector('#gameId .rightsPage')
-  const rightsPageButton = document.querySelector('#gameId .rightsPage button')
-  const gamePage = document.querySelector('#gameId .gamePage')
-  const gamePageQuestion = document.querySelector('#gameId .gamePage .question')
-  const resultButton = document.querySelector('#gameId .resultPage button')
-  const resultWrapper = document.querySelector('#gameId .resultPage')
-  const resultImage = document.querySelector('#gameId .resultPage .heroBg')
-  const prevQuestionButton = document.querySelector('#gameId .prevQuestion')
+  const welcomePage = document.querySelector('#fairoVectorSPecProject .welcomePage')
+  const rightsPage = document.querySelector('#fairoVectorSPecProject .rightsPage')
+  const rightsPageButton = document.querySelector('#fairoVectorSPecProject .rightsPage button')
+  const gamePage = document.querySelector('#fairoVectorSPecProject .gamePage')
+  const gamePageQuestion = document.querySelector('#fairoVectorSPecProject .gamePage .question')
+  const resultButton = document.querySelector('#fairoVectorSPecProject .resultPage button')
+  const resultWrapper = document.querySelector('#fairoVectorSPecProject .resultPage')
+  const resultImage = document.querySelector('#fairoVectorSPecProject .resultPage .heroBg')
+  const prevQuestionButton = document.querySelector('#fairoVectorSPecProject .prevQuestion')
   const gamePageAnswersWrapper = document.querySelector(
-    '#gameId .gamePage .answersWrapper'
+    '#fairoVectorSPecProject .gamePage .answersWrapper'
   )
-  const timeItem = document.querySelector('#gameId .gamePage .time span')
-  const moneyItem = document.querySelector('#gameId .gamePage .money span')
-  const nervesItem = document.querySelector('#gameId .gamePage .nerves span')
+  const timeItem = document.querySelector('#fairoVectorSPecProject .gamePage .time span')
+  const moneyItem = document.querySelector('#fairoVectorSPecProject .gamePage .money span')
+  const nervesItem = document.querySelector('#fairoVectorSPecProject .gamePage .nerves span')
 
-  const modalTimeItem = document.querySelector('#gameId .modalBg .time span')
-  const modalMoneyItem = document.querySelector('#gameId .modalBg .money span')
+  const modalTimeItem = document.querySelector('#fairoVectorSPecProject .modalBg .time span')
+  const modalMoneyItem = document.querySelector('#fairoVectorSPecProject .modalBg .money span')
   const modalNervesItem = document.querySelector(
-    '#gameId .modalBg .nerves span'
+    '#fairoVectorSPecProject .modalBg .nerves span'
   )
   const gameImage = document.querySelector(
-    '#gameId .gamePage .imageWrapper img'
+    '#fairoVectorSPecProject .gamePage .imageWrapper img'
   )
-  const modalWrapper = document.querySelector('#gameId .modalBg')
-  const modalButton = document.querySelector('#gameId .modalBg button')
+  const modalWrapper = document.querySelector('#fairoVectorSPecProject .modalBg')
+  const modalButton = document.querySelector('#fairoVectorSPecProject .modalBg button')
 
   welcomePageButton.addEventListener('click', () => {
     rightsPage.classList.add('rightsPageVisible')
@@ -73,8 +73,8 @@ window.addEventListener('load', () => {
   rightsPageButton.addEventListener('click', () => {
     gamePage.classList.add('gamePageVisible')
     rightsPage.classList.add('rightsPageHidden')
-    document.querySelector('#gameId .bgImage').style.display = 'none'
-    document.querySelector('#gameId').style.overflow = 'visible'
+    document.querySelector('#fairoVectorSPecProject .bgImage').style.display = 'none'
+    document.querySelector('#fairoVectorSPecProject').style.overflow = 'visible'
   })
 
   resultButton.addEventListener('click', () => {
@@ -173,7 +173,7 @@ window.addEventListener('load', () => {
 
   const onGameEnd = () => {
     resultButton.innerText = 'Грати ще'
-    const resultText = document.querySelector('#gameId .resultPage h2')
+    const resultText = document.querySelector('#fairoVectorSPecProject .resultPage h2')
 
     if (money <= 0 || time <= 0 || nerves <= 0) {
       resultText.innerText = 'Невдача! Ви не змогли пробалансувати між часом, грошима та нервами.'
@@ -190,15 +190,15 @@ window.addEventListener('load', () => {
       resultImage.setAttribute('src', './assets/timeBg.png')
     }
 
-    document.querySelector('#gameId .bgImage').style.display = 'block'
-    document.querySelector('#gameId').style.overflow = 'hidden'
+    document.querySelector('#fairoVectorSPecProject .bgImage').style.display = 'block'
+    document.querySelector('#fairoVectorSPecProject').style.overflow = 'hidden'
 
     resultWrapper.classList.add('resultPageVisible')
     gamePage.classList.remove('gamePageVisible')
   }
 
   const showQuote = (answeredItems, quote) => {
-    const text = document.querySelector('#gameId .quoteWrapper p')
+    const text = document.querySelector('#fairoVectorSPecProject .quoteWrapper p')
     modalButton.innerText = 'далі'
 
     answeredItems.forEach((item) => {
