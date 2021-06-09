@@ -1,3 +1,71 @@
+#fairoVectorSPecProjectWrapper {
+  $mobileWidth: 540px;
+  $animationDuration: 6s;
+  position: relative;
+  overflow: hidden;
+
+  .bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+
+    @media (max-width: $mobileWidth) {
+      object-fit: cover;
+    }
+  }
+
+  .pixel {
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: -45px;
+    z-index: -1;
+    transform: translateX(-45px);
+    will-change: transform;
+    $colors: (
+      lighten(#5540b3, 10%),
+      lighten(#5540b3, 20%),
+      lighten(#5540b3, 30%),
+      darken(#442cac, 10%),
+      darken(#442cac, 20%)
+    );
+    animation-name: move;
+    animation-duration: $animationDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    @for $i from 1 through 36 {
+      &:nth-child(#{$i}) {
+        left: calc(#{$i} * 45px);
+        background-color: nth($colors, random(length($colors)));
+        animation-duration: (random($animationDuration * 10) / 10) * 1s + 4s;
+        animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+      }
+    }
+
+    @media (max-width: $mobileWidth) {
+      width: 60px;
+      height: 60px;
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          left: calc(#{$i} * 60px);
+        }
+      }
+    }
+  }
+
+  @keyframes move {
+    to {
+      transform: translateX(-45px) translateY(800px);
+      filter: blur(10px);
+      opacity: 1;
+    }
+  }
+}
+
 #fairoVectorSPecProject {
   $primaryColor: #4432a9;
   $secondaryColor: #ff5f21;
@@ -19,63 +87,12 @@
     box-sizing: border-box;
   }
 
-  .bgImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-
-    @media (max-width: $mobileWidth) {
-      object-fit: cover;
-    }
-  }
+  
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-  .welcomePage .pixel,
-  .resultPage .pixel {
-    display: block;
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: -45px;
-    z-index: -1;
-    transform: translateX(-45px);
-    will-change: transform;
-    $colors: (
-      lighten(#5540b3, 10%),
-      lighten(#5540b3, 20%),
-      lighten(#5540b3, 30%),
-      darken(#442cac, 10%),
-      darken(#442cac, 20%)
-    );
-    animation-name: move;
-    animation-duration: $animationDuration;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    @for $i from 1 through 18 {
-      &:nth-child(#{$i}) {
-        left: calc(#{$i} * 45px);
-        background-color: nth($colors, random(length($colors)));
-        animation-duration: (random($animationDuration * 10) / 10) * 1s + 4s;
-        animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
-      }
-    }
-
-    @media (max-width: $mobileWidth) {
-      width: 60px;
-      height: 60px;
-      @for $i from 1 through 9 {
-        &:nth-child(#{$i}) {
-          left: calc(#{$i} * 60px);
-        }
-      }
-    }
-  }
 
   button {
     width: fit-content;
@@ -499,6 +516,42 @@
       font-size: 24px;
       padding: 0 16px;
     }
+
+    .results {
+      display: flex;
+      margin-bottom: 16px;
+      color: #fff;
+      .time,
+      .money {
+        margin-right: 16px;
+      }
+      .time,
+      .money,
+      .nerves {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        div {
+          font-weight: 300;
+          font-size: 14px;
+        }
+        span {
+          margin-top: 4px;
+          font-weight: bold;
+        }
+      }
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .heroBg {
+      width: 50%;
+      @media(max-width: 990px) {
+        width: 100%;
+      }
+    }
   }
 
   .modalBg {
@@ -595,13 +648,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes move {
-  100% {
-    transform: translateX(-45px) translateY(800px);
-    filter: blur(10px);
   }
 }
 
